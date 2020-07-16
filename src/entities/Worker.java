@@ -54,5 +54,9 @@ public class Worker {
 		contracts.add(contract);
 	}
 	
+	public void removeContract(HourContract contract) {
+		contracts.remove(contract);
+	}
+	
 }
 
