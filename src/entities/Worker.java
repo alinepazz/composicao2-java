@@ -12,3 +12,4 @@ public class Worker {
 	private Double baseSalary;
 	private List<HourContract> contracts = new ArrayList<>();
 }
+
