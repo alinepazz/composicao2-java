@@ -11,6 +11,9 @@ public class HourContract {
 	
 	SimpleDateFormat sdf = new SimpleDateFormat("DD/MM/YYYY");
 	
+	public HourContract() {
+		
+	}
 	public HourContract(Date date, Double valuePerHour, Integer hour) {
 		this.date = date;
 		this.valuePerHour = valuePerHour;
