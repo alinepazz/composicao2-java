@@ -19,7 +19,6 @@ public class Program {
 		Scanner c = new Scanner(System.in);
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-		SimpleDateFormat sds = new SimpleDateFormat("MM/YYYY");
 		
 		System.out.print("Enter department's name:");
 		String department = c.nextLine();
@@ -56,7 +55,12 @@ public class Program {
 			worker.addContract(contracts);
 			
 			System.out.print("Enter month and year to calculate income (MM/YYYY):");
-			Date date1 = sds.parse(c.next());
+			String monthAndYear = c.next();
+			int month = Integer.parseInt(monthAndYear.substring(0, 2));
+			int year = Integer.parseInt(monthAndYear.substring(3));
+			System.out.println("Name: " + worker.getName());
+			System.out.println("Department: " + worker.getDepartment().getName());
+			System.out.println("Income for " + monthAndYear + ": " + String.format("%.2f", worker.income(year, month)));
 			
 			
 		}
