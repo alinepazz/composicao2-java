@@ -19,10 +19,11 @@ public class Program {
 		Scanner c = new Scanner(System.in);
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+		SimpleDateFormat sds = new SimpleDateFormat("MM/YYYY");
 		
 		System.out.print("Enter department's name:");
 		String department = c.nextLine();
-		Department depart = new Department(department);
+	
 		
 		System.out.println("Enter worker data:");
 		
@@ -30,12 +31,12 @@ public class Program {
 		String name = c.nextLine();
 		
 		System.out.print("Level: ");
-		WorkerLevel level = WorkerLevel.valueOf(c.nextLine());
+		String workerLevel = c.nextLine();
 		
 		System.out.print("Base salary:");
 		double salary = c.nextDouble();
 		
-		Worker worker = new Worker(name, level, salary);
+		Worker worker = new Worker(name, WorkerLevel.valueOf(workerLevel), salary, new Department(department));
 		
 		System.out.println("How many contracts to this worker?");
 		int contract = c.nextInt();
@@ -55,6 +56,8 @@ public class Program {
 			worker.addContract(contracts);
 			
 			System.out.print("Enter month and year to calculate income (MM/YYYY):");
+			Date date1 = sds.parse(c.next());
+			
 			
 		}
 
